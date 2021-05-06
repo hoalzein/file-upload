@@ -19,8 +19,23 @@ class FileUpload extends Controller {
         if (file_exists($file_path)) {
             $client = Vaites\ApacheTika\Client::prepare('localhost', 9998);
             $html = $client->getHTML($file_path);
-            return view('file-view', compact('html'));
+            $meta_data = $client->getMetadata($file_path);
+            $text = $client->getText($file_path);
+            $paragraphs = $this->extract_paragraphs($text);
+            return view('file-view', compact('html', 'paragraphs', 'meta_data'));
         }
+        return redirect('/index');
+    }
+
+    public function extract_paragraphs($text) {
+        $contents = explode("\n", $text);
+        $paragraphs = array();
+        foreach ($contents as $content) {
+            if ($content != "" && !ctype_space($content)) {
+                array_push($paragraphs, $content);
+            }
+        }
+        return $paragraphs;
     }
 
     public function fileUpload(Request $request) {
