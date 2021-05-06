@@ -34,4 +34,16 @@ Assuming your project is located at http://localhost/projectdir, navigate to:
 ```bash
 http://localhost/projectdir/public
 ```
-As shown, navigate through your computer to select a compatible file for uploading by clicking the "Browse" button.
+As shown below, navigate through your computer to select a compatible file for uploading by clicking the "Browse" button.
+![image](https://github.com/hoalzein/file-upload/blob/main/storage/1.png)
+
+To be able to extract the file contents, the Apache Tika server has to be started. You can do so by navigating to your project directory on the terminal and run this command:
+
+```bash
+java -jar tika-server-1.26.jar
+```
+Please note the jar filename on your directory(It might differ).
+
+Once the Apache Tika server is running, data can be extracted by clicking on the overview button on the relevant file. A file overview could look as shown below.
+
+![image](https://github.com/hoalzein/file-upload/blob/main/storage/3.png)
