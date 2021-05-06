@@ -52,6 +52,7 @@
                         <th scope="col">#</th>
                         <th scope="col">Name</th>
                         <th scope="col"></th>
+                        <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -60,6 +61,7 @@
                         <th scope="row">{{ $loop->iteration }}</th>
                         <td>{{ $file->name }}</td>
                         <td><a href="{{ route('file-overview', $file->id) }}" role="button" class="btn btn-primary">Overview</a></td>
+                        <td><a href="{{ route('file-delete', $file->id) }}" role="button" class="btn btn-danger">Delete</a></td>
                     </tr>
                     @endforeach
                 </tbody>

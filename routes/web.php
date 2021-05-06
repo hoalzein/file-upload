@@ -20,3 +20,4 @@ Route::get('/', function () {
 Route::get('/index', [FileUpload::class, 'index'])->name('index');
 Route::post('/file-upload', [FileUpload::class, 'fileUpload'])->name('file-upload');
 Route::get('/view-file/{file}', [FileUpload::class, 'fileView'])->name('file-overview');
+Route::get('/delete-file/{file}', [FileUpload::class, 'fileDelete'])->name('file-delete');
