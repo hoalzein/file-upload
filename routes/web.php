@@ -17,5 +17,6 @@ use App\Http\Controllers\FileUpload;
 Route::get('/', function () {
     return redirect('/upload-file');
 });
-Route::get('/upload-file', [FileUpload::class, 'createForm']);
+Route::get('/upload-file', [FileUpload::class, 'index'])->name('files');
 Route::post('/upload-file', [FileUpload::class, 'fileUpload'])->name('file-upload');
+Route::get('/view-file/{file}', [FileUpload::class, 'fileView'])->name('file-overview');

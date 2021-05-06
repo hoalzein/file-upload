@@ -41,9 +41,29 @@
                     <label class="custom-file-label" for="chooseFile">Select file</label>
                 </div>
                 <button type="submit" name="submit" class="btn btn-primary btn-block mt-4">
-                    Upload Files
+                    Upload File
                 </button>
             </form>
+        </div>
+        <div class="container mt-5">
+            <table class="table table-bordered mb-5">
+                <thead>
+                    <tr class="table-success">
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($files as $file)
+                    <tr>
+                        <th scope="row">{{ $loop->iteration }}</th>
+                        <td>{{ $file->name }}</td>
+                        <td><a href="{{ route('file-overview', $file->id) }}" role="button" class="btn btn-primary">Overview</a></td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
         </div>
         <script>
 jQuery(document).ready(function () {

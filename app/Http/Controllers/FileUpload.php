@@ -4,11 +4,23 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\File;
+use Vaites;
 
 class FileUpload extends Controller {
 
-    public function createForm() {
-        return view('file-upload');
+    public function index() {
+        $files = File::all();
+        return view('file-upload', compact('files'));
+    }
+
+    public function fileView($file_id) {
+        $file = File::findOrFail($file_id);
+        $file_path = $file->file_path . '/' . $file->name;
+        if (file_exists($file_path)) {
+            $client = Vaites\ApacheTika\Client::prepare('localhost', 9998);
+            $html = $client->getHTML($file_path);
+            return view('file-view', compact('html'));
+        }
     }
 
     public function fileUpload(Request $request) {
