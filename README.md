@@ -1,4 +1,4 @@
-A simple file upload and adat extraction using laravel
+A simple file upload and data extraction using laravel
 =======================
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://GitHub.com/hoalzein/p4n-html.js/graphs/commit-activity)
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
@@ -12,7 +12,7 @@ A simple file upload and adat extraction using laravel
 
 After downloading a fresh version of laravel 8 and ensuring your php environment is set accordingly, overwrite the contents in your project with the contents of this project directory.
 
-Configure your database comnnections and credentials in your .env file located in your project folder.
+Configure your database connections and credentials in your .env file located in your project folder.
 
 Open your terminal within the project directory, then run this command to perform database migration:
 
@@ -47,3 +47,14 @@ Please note the jar filename on your directory(It might differ).
 Once the Apache Tika server is running, data can be extracted by clicking on the overview button on the relevant file. A file overview could look as shown below.
 
 ![image](https://github.com/hoalzein/file-upload/blob/main/storage/3.png)
+
+
+### 4. Credits
+
+This application uses Open Source components. You can find the source code of their open source projects along with license information below. We acknowledge and are grateful to these developers for their contributions to open source.
+
+Copyright (c) 2016 David Martínez.
+
+License (MIT) https://github.com/vaites/php-apache-tika/blob/master/LICENSE
+
+Project: PHP Apache Tika https://github.com/vaites/php-apache-tika
